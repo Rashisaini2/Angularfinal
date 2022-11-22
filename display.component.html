@@ -1,0 +1,27 @@
+<div>
+
+ 
+
+    <button (click)="toggleContent(); counter() " *ngIf="!isContentVisible" class="btn btn-info">Display Details</button>
+  
+    <button (click)="toggleContent()" *ngIf="isContentVisible" class="btn btn-info">Hide Details</button>
+  
+    <p >Count :{{count}}</p>
+  
+    <p *ngIf="isContentVisible" class="display-content">{{content}}</p>
+   
+   
+  
+    <p *ngFor="let log of togglingLog; index as i"
+  
+        [ngStyle]="{backgroundColor: getColor(i)}"
+  
+        [ngClass]="{'log-text': i >= limit}"
+  
+    >
+  
+      {{log}}
+  
+    </p>
+  
+  </div>
